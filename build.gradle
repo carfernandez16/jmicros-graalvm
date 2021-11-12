@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+}
+
+sourceCompatibility = 1.17
+targetCompatibility = 1.17
+
+group 'com.jmicros.graalvm'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    // logger
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+
+    // Json
+    implementation group: 'org.json', name: 'json', version: '20210307'
+
+    // graalvm js
+    implementation group: 'org.graalvm.js', name: 'js', version: '21.1.0'
+    implementation group: 'org.graalvm.js', name: 'js-scriptengine', version: '21.1.0'
+
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'com.jmicros.graalvm.App'
+}
+
+test {
+    useJUnitPlatform()
+}
+
